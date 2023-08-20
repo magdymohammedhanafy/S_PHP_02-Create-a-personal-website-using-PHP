@@ -2,7 +2,6 @@
 require_once("../Controllers/skillsController.php");
 $skills=getSkills();
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,31 +13,27 @@ $skills=getSkills();
 <body>
     <div class="header">
     <?php 
-    require_once('header.html');
+    require_once('header.php');
     ?>
     <h1>My Skills</h1>
     </div>
 <div class="cont">
     <div class="skills-section">
+        <?php foreach( $skills as $skill ){  
+
+        ?>
         <ul>
-            <li><?php echo $skills[0]['skillTitle'] ?>
+            <li><?php echo $skill['skillTitle'] ?>
                 <ul>
-                    <li><?php echo $skills[0]['skill1'] ?></li>
-                    <li><?php echo $skills[0]['skill2'] ?></li>
-                    <li><?php echo $skills[0]['skill3'] ?></li>
+                    <li><?php echo $skill['skill1'] ?></li>
+                    <li><?php echo $skill['skill2'] ?></li>
+                    <li><?php echo $skill['skill3'] ?></li>
                 </ul>
             </li>
         </ul>
 
-        <ul>
-            <li><?php echo $skills[1]['skillTitle'] ?>
-                <ul>
-                    <li><?php echo $skills[1]['skill1'] ?></li>
-                    <li><?php echo $skills[1]['skill2'] ?></li>
-                    <li><?php echo $skills[1]['skill3'] ?></li>
-                </ul>
-            </li>
-        </ul>
+        <?php }?>
+
     </div>
     </div>   
 </body>

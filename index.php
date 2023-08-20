@@ -9,7 +9,7 @@
 <body>
     <div class="nav">
     <?php 
-    require_once('./View/header.html');
+    require_once('./View/header.php');
     ?>
     </div>
 
